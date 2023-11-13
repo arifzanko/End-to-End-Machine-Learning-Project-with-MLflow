@@ -10,10 +10,10 @@ class DataIngestionTrainingPipeline:
 
     def main(self):
         config = ConfigurationManager() #create instance of ConfigurationManager class
-        data_ingestion_config = config.get_data_ingestion_config() #calls the get_data_ingestion_config method
-        data_ingestion = DataIngestion(config=data_ingestion_config) #create instance and passing
-        data_ingestion.download_file()
-        data_ingestion.extract_zip_file()
+        data_ingestion_config = config.get_data_ingestion_config() #get data from config.yaml
+        data_ingestion = DataIngestion(config=data_ingestion_config) #create instance and passing data
+        data_ingestion.download_file() #use method to download
+        data_ingestion.extract_zip_file() #use method to unzip
 
 if __name__ == '__main__':
     try:
